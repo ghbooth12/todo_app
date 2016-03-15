@@ -1,0 +1,4 @@
+<%= content_tag :li, class: 'list-group-item', id: "item-#{item.id}" do %>
+  <span class="badge"><%= time_ago_in_words(item.created_at) %> ago</span>
+  <p><%= item.name %></p>
+<% end %>
