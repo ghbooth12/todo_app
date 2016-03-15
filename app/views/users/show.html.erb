@@ -1,0 +1,32 @@
+<div class="user-profile">
+  <div class="media pull-left">
+    <% avatar_url = @user.avatar_url(230) %>
+    <% if avatar_url %>
+      <%= image_tag avatar_url, class: 'meida-object gravatar_lg' %>
+    <% end %>
+
+    <h4><%= @user.email %></h4>
+    <hr>
+    <p><span class="glyphicon glyphicon-tasks"></span> Number of sign in: <%= @user.sign_in_count %></p>
+    <hr>
+    <p><span class="glyphicon glyphicon-time"></span> Join on: <%= @user.created_at %></p>
+    <hr>
+
+  </div>
+  <div class="col-md-9 pull-right">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <span class="badge"><%= @user.sign_in_count %></span>
+        Sign in count
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><%= @user.created_at %></span>
+        Created your account at
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><%= @user.updated_at %></span>
+        Updated your account at
+      </li>
+    </ul>
+  </div>
+</div>
