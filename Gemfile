@@ -31,3 +31,5 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Environment Variables with Figaro
 gem 'figaro', '1.0'
+# library that generates fake data.
+gem 'faker'

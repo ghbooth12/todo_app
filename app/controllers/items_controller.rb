@@ -2,20 +2,15 @@ class ItemsController < ApplicationController
   def create
     @item = current_user.items.build(item_params)
     @new_item = Item.new
+    @item.save
+    
+    flash[:notice] = "Saved! New Item: #{@item.name}"
+    flash[:alert] = "Item failed to save."
 
-    if @item.save
-      notice = "Saved! New to-do item: #{@item.name}" # NOT working
-      redirect_to root_path
-    else
-      alert = "There was an error creating an item. Please try again."
-      redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
-
-    # If using Ajax
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
   end
 
   private
