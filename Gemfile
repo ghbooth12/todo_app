@@ -29,3 +29,5 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 # flexible authentication solution for Rails with Warden
 gem 'devise'
+# Environment Variables with Figaro
+gem 'figaro', '1.0'
