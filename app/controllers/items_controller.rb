@@ -17,8 +17,8 @@ class ItemsController < ApplicationController
 
   def destroy_multiple
     @items = current_user.items.select {|i| i.completes.any? }
-    
-    if @items.each {|i| i.destroy }
+
+    if @items.each(&:destroy)
       @msg = "Deleted! Item(s): " + @items.map(&:name).join(', ')
     else
       @msg = 'Item failed to delete'
