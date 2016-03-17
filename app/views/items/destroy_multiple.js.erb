@@ -1,4 +1,5 @@
-<% if @items.each {|i| i.destroy } %>
+<% items = current_user.items.select {|i| i.completes.any? } %>
+<% if items.empty? %>
   <% @items.each do |i| %>
     $('#item-<%= i.id %>').hide();
   <% end %>
