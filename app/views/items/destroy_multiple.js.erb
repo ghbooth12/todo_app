@@ -1,0 +1,8 @@
+<% if @items.each {|i| i.destroy } %>
+  <% @items.each do |i| %>
+    $('#item-<%= i.id %>').hide();
+  <% end %>
+  $('.flash').html("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= @msg %></div>");
+<% else %>
+  $('.flash').html("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= @msg %></div>");
+<% end %>

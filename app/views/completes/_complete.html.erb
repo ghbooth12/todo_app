@@ -1,0 +1,7 @@
+<div id="item-<%= item.id %>-complete">
+  <% if complete = current_user.complete_for(item) %>
+    <%= link_to "", [item, complete], method: :delete, remote: true, class: 'glyphicon glyphicon-ok', style: 'float: left; color: #449d44;' %>
+  <% else %>
+    <%= link_to "", [item, Complete.new], method: :post, remote: true, class: 'glyphicon glyphicon-remove', style: 'float: left; color: #aaa;' %>
+  <% end %>
+</div>
