@@ -5,6 +5,14 @@ Rails.application.routes.draw do
     resources :items, only: :create
   end
 
+  resources :items, only: [] do
+    resources :completes, only: [:create, :destroy]
+
+    collection do
+      delete 'destroy_multiple'
+    end
+  end
+
   get 'users/:id' => 'users#show', as: :user_show
   root 'welcome#index'
 

@@ -14,10 +14,23 @@
 
   </div>
   <div class="col-md-9 pull-right">
-    <div>
+    <div class="well">
+      Delete all the complete to-do items
+      <%= link_to destroy_multiple_items_path, method: :delete, remote: true, class: 'btn btn-warning', style: 'float: right;' do %>
+        <span class="glyphicon glyphicon-trash"></span> Delete
+      <% end %>
+    </div>
+    <div class="items">
+      <li class="list-group-item disabled">
+        Your To-Do Items
+        <small>
+          <span class="glyphicon glyphicon-ok"></span> Complete |
+          <span class="glyphicon glyphicon-remove"></span> Incomplete
+        </small>
+      </li>
       <ul class="list-group js-items">
         <% current_user.items.each do |item| %>
-        <%= render partial: 'items/item', locals: { item: item } %>
+          <%= render partial: 'items/item', locals: { item: item } %>
         <% end %>
       </ul>
     </div>

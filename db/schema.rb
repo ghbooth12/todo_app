@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315173028) do
+ActiveRecord::Schema.define(version: 20160317003149) do
+
+  create_table "completes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "item_id"
+  end
+
+  add_index "completes", ["item_id"], name: "index_completes_on_item_id"
+  add_index "completes", ["user_id"], name: "index_completes_on_user_id"
 
   create_table "items", force: :cascade do |t|
     t.string   "name"

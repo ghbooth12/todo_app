@@ -1,8 +1,8 @@
 <% if @item.valid?  %>
-  $('.flash').prepend("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:notice] %></div>");
+  $('.flash').html("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= @msg %></div>");
   $('.js-items').append("<%= escape_javascript(render(@item)) %>");
   $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { item: @new_item }) %>");
 <% else %>
-  $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
+  $('.flash').html("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= @msg %></div>");
   $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { item: @new_item }) %>");
 <% end  %>
