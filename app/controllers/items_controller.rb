@@ -16,6 +16,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy_multiple
+    # select returns an array, not association
+    # array won't work with destroy_all(association can)
     @items = current_user.items.select {|i| i.completes.any? }
 
     if @items.each(&:destroy)

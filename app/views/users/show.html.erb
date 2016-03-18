@@ -9,7 +9,7 @@
     <hr>
     <p><span class="glyphicon glyphicon-tasks"></span> Number of sign in: <%= current_user.sign_in_count %></p>
     <hr>
-    <p><span class="glyphicon glyphicon-time"></span> Join on: <%= current_user.created_at %></p>
+    <p><span class="glyphicon glyphicon-time"></span> Join on: <%= current_user.created_at.strftime("%B %d, %Y") %></p>
     <hr>
 
   </div>
