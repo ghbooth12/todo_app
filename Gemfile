@@ -33,5 +33,3 @@ gem 'devise'
 gem 'figaro', '1.0'
 # library that generates fake data.
 gem 'faker'
-# Job scheduler for Ruby
-gem 'rufus-scheduler'
