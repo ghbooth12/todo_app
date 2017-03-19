@@ -1,5 +1,9 @@
 <div class="jumbotron">
-  <h1> To Do List </h1>
+  <h2>To Do List</h2>
   <p class="lead">Make your own to-do list. Start today!</p>
   <p>A self-destructing to-do list to keep you focused on the things that really matter.</p>
+
+  <a href="http://todo-app-ghbooth12.herokuapp.com" target="_blank" class="btn btn-info">GitHub</a>
+  <%= link_to "Log in as test user automatically", auto_sign_path, class: 'btn btn-warning' %>
+  <%= link_to "See Todo List", user_show_path(@tester), class: 'btn btn-success' %>
 </div>

@@ -15,8 +15,20 @@
  */
 
 @import "bootstrap-sprockets";
+@import 'bootswatch/lumen/variables';
 @import "bootstrap";
+@import 'bootswatch/lumen/bootswatch';
+
+body {
+  background: url(../img/bg.jpg) top left repeat;
+}
 
 .user-info {
   margin-top: 10px;
+}
+
+.jumbotron {
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/img/main.png) 100% 40%;
+  background-size: cover;
+  color: #fff;
 }

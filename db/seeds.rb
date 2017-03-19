@@ -1,4 +1,3 @@
-# Create 5 test_users
 test_users = (1..5).to_a.map do |n|
   User.new(
     email: "test#{n}@example.com",
@@ -6,10 +5,16 @@ test_users = (1..5).to_a.map do |n|
   )
 end
 
+# Test User is for a sample account for first time user.
+test_users.push(User.new(email: "test@test.io", password: "testtest"))
+
 test_users.each do |user|
   user.skip_confirmation!
   user.save
+end
 
+users = User.all
+users.each do |user|
   rand(5..10).times do
     item = user.items.create!(name: Faker::Hipster.sentence)
     item.update_attribute(:created_at, Faker::Date.between(8.days.ago, Date.today))

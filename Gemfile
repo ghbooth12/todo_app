@@ -35,3 +35,4 @@ gem 'figaro', '1.0'
 gem 'faker'
 # Job scheduler for Ruby
 gem 'rufus-scheduler'
+gem 'bootswatch-rails'
