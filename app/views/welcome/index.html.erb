@@ -7,3 +7,48 @@
   <%= link_to "Log in as test user automatically", auto_sign_path, class: 'btn btn-warning' %>
   <%= link_to "See Todo List", user_show_path(@tester), class: 'btn btn-success' %>
 </div>
+
+<div id="steps" class="row">
+  <div class="col-xs-12">
+    <div class="panel">
+      <div class="panel-heading">
+        <h2><strong>How it works</strong></h2>
+        <p>Log-in as test user account, take a look how it works.</p>
+      </div>
+      <div class="panel-body">
+        <div class="well">
+          <ol class="hover-link">
+            <li>
+              <%= link_to auto_sign_path do %>
+                Click here to log in automatically. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to user_show_path(@tester), target: '_blank' do %>
+                See to-do list. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              Upload profile photo through <a href="https://en.gravatar.com" target="_blank">Gravatar</a>.
+            </li>
+            <li>
+              <%= link_to user_show_path(id: @tester, anchor: "addNew"), target: '_blank' do %>
+                Add a new to-do item. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to user_show_path(@tester), target: '_blank' do %>
+                Check off the completed to-do items. Ajax makes buttons much faster. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to user_show_path(@tester), target: '_blank' do %>
+                With Rake, delete to-do items Automatically that have not been completed after seven days. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

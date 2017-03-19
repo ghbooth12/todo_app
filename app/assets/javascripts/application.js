@@ -15,3 +15,33 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+// application.js
+var analytics_app = {};
+analytics_app.report = function(eventName){
+  var event = { event: { name: eventName } };
+  var request = new XMLHttpRequest();
+
+  request.open("POST", "http://analytics-app-ghbooth12.herokuapp.com/api/events", true);
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(JSON.stringify(event));
+};
+
+// ============ e.g., Track "click" event on "#target-element" element. ============
+$(document).ready(function(){
+  $('#steps a').on("click", function(){
+    analytics_app.report("links clicked from the main section");
+  });
+});
+
+$(document).ready(function(){
+  $('.glyphicon-remove').on("click", function(){
+    analytics_app.report("To-do item marked as completed");
+  });
+});
+
+$(document).ready(function(){
+  $('#addNew button').on("click", function(){
+    analytics_app.report("Create a new to-do item");
+  });
+});

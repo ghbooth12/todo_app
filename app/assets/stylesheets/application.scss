@@ -32,3 +32,42 @@ body {
   background-size: cover;
   color: #fff;
 }
+
+// Custom Styling
+.text-faded {
+  color: #aaa;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.hover-link {
+  a {
+    color: #333;
+    -webkit-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+
+    &:hover {
+      color: #1397ff;
+      text-decoration: none;
+    }
+  }
+}
+
+#steps {
+  li {
+    font-size: 1.3em;
+    line-height: 1.5em;
+  }
+  // Override hove-link for bootstrap buttons
+  a.btn {
+    color: #fff;
+    &:hover {
+      color: #fff;
+    }
+  }
+  code {
+    display: block;
+  }
+}
